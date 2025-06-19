@@ -16,16 +16,16 @@ This document outlines a comprehensive system for managing Claude (AI assistant)
 
 ```
 specs/
-├── project_plan.md              # Master project overview (ALWAYS ACTIVE)
-├── features/                    # Major feature specifications
+├── project_plan.md             # Master project overview (ALWAYS ACTIVE)
+├── features/                   # Major feature specifications
 │   ├── auth-system.md          # Example: Authentication feature spec
 │   ├── user-dashboard.md       # Example: Dashboard feature spec
 │   └── api-integration.md      # Example: API integration spec
 ├── tasks/                      # Granular task breakdowns
-│   ├── auth/                   # Tasks related to auth feature
+│   ├── auth-system/            # Tasks related to Authentication feature
 │   │   ├── setup-supabase.md   # Specific implementation tasks
 │   │   └── login-ui.md         # UI-specific tasks
-│   └── dashboard/              # Tasks related to dashboard feature
+│   └── user-dashboard/         # Tasks related to dashboard feature
 └── completed/                  # Archived completed work
     ├── features/               # Completed feature specs
     ├── tasks/                  # Completed task specs
@@ -76,7 +76,9 @@ specs/
 2. Ask: "Should I create a new [feature/task] spec for this?"
 3. If yes, create spec file with proper naming
 4. Update project_plan.md with reference
-5. Commit with: "docs(specs): Add [name] specification"
+5. Commit with spec-based prefix:
+   - "spec([feature-name]): Create [feature] specification"
+   - "project: Add [feature] to project plan"
 ```
 
 #### Working on Tasks
@@ -88,7 +90,8 @@ specs/
 2. Note any blockers: [🚫 Blocked: reason]
 3. Track dependencies: [⏳ Waiting: dependency]
 4. Update related specs as needed
-5. Commit incremental progress
+5. Commit when task completed:
+   - "task([feature-name]): Complete [task-name] [brief-description]"
 ```
 
 #### Completing Work
@@ -101,7 +104,9 @@ specs/
 3. Move to appropriate completed/ directory
 4. Update archive-index.md with summary
 5. Update project_plan.md with progress
-6. Commit: "docs(specs): Complete [feature/task] - move to archive"
+6. Commit with spec-based prefix:
+   - "feature([feature-name]): Complete [feature] - move to archive"
+   - "project: Update project plan with completed milestone"
 ```
 
 ### Status Icons & Conventions
@@ -175,8 +180,8 @@ specs/
 2. CLAUDE: "I'll create a feature spec for this. Should I include social auth?"
 3. Create: `specs/features/auth-system.md`
 4. Update: `specs/project_plan.md` with new feature
-5. Break down: Create task specs in `specs/tasks/auth/`
-6. Commit: "docs(specs): Add authentication system specification"
+5. Break down: Create task specs in `specs/tasks/auth-system/`
+6. Commit: "spec(auth-system): Create authentication system specification"
 ```
 
 ### Daily Workflow
@@ -188,7 +193,7 @@ specs/
 4. Propose next logical task
 5. Load relevant task spec
 6. Execute work and update status
-7. Commit progress regularly
+7. Commit progress regularly as tasks are completed
 ```
 
 ### Completing Major Work
@@ -200,7 +205,78 @@ specs/
 4. Move task specs to `specs/completed/tasks/`
 5. Update `specs/completed/archive-index.md`
 6. Update `specs/project_plan.md` with milestone
-7. Commit: "docs(specs): Complete auth system - archive specs"
+7. Commit: "feature(auth-system): Complete auth system - archive specs"
+```
+
+## Commit Message Convention
+
+**CRITICAL**: All commits when completing work must use spec-based prefixes to immediately identify which spec file contains the completed task.
+
+### Format
+
+```
+[spec-type]([spec-name]): [Action] [description]
+```
+
+### Spec Types & Examples
+
+```markdown
+# Task Completion (most common)
+
+task(auth-system): Complete setup-supabase implementation
+task(user-dashboard): Complete profile-page UI components
+task(payment-system): Complete stripe-integration testing
+
+# Feature Completion
+
+feature(auth-system): Complete authentication feature - ready for testing
+feature(user-dashboard): Complete dashboard feature - all tasks done
+
+# Project Plan Updates
+
+project: Update project plan - mark Phase 1 complete
+project: Add new Phase 2 requirements
+
+# Spec File Management
+
+spec(auth-system): Create authentication feature specification
+spec(auth-system): Move auth-system to completed archive
+spec(payment): Update payment feature spec with new requirements
+```
+
+### When to Commit
+
+```markdown
+# MUST commit when:
+
+- Task marked complete [✅] in any spec
+- Feature marked complete [✅] in project plan
+- Spec moved to completed/ archive
+- Project plan updated with milestone
+
+# Commit message tells you exactly:
+
+- Which spec file to check: task(auth-system) = specs/tasks/auth-system/
+- What was completed: the task name in the commit
+- When it happened: git commit timestamp
+```
+
+### Tracing Commits to Specs
+
+```markdown
+# From commit message "task(auth-system): Complete setup-supabase"
+
+→ Check: specs/tasks/auth-system/setup-supabase.md
+→ Or if archived: specs/completed/tasks/[date]\_auth-system_setup-supabase.md
+
+# From commit message "feature(user-dashboard): Complete dashboard feature"
+
+→ Check: specs/features/user-dashboard.md
+→ Or if archived: specs/completed/features/[date]\_user-dashboard.md
+
+# From commit message "project: Update Phase 2 requirements"
+
+→ Check: specs/project_plan.md
 ```
 
 ## File Naming Conventions
@@ -218,15 +294,15 @@ payment-integration.md
 
 # Tasks (feature-grouped, specific)
 
-auth/setup-supabase.md
-auth/login-ui-component.md
-dashboard/user-profile-page.md
-payment/stripe-integration.md
+auth-system/setup-supabase.md
+auth-system/login-ui-component.md
+user-dashboard/user-profile-page.md
+payment-system/stripe-integration.md
 
 # Dates in archives (ISO format)
 
 completed/features/2024-01-15_user-authentication.md
-completed/tasks/2024-01-15_auth_setup-supabase.md
+completed/tasks/2024-01-15_auth-system_setup-supabase.md
 ```
 
 ## Communication Protocols
