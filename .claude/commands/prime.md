@@ -3,24 +3,21 @@
 RUN:
 
 - git ls-files
-- find specs/ -name "_.md" -not -path "specs/completed/_" | head -10
+- find specs -name "_.md" -not -path "specs/completed/_" -not -name "\_template.md"
 
 READ:
 
 - README.md
 - ai_docs/project-management.md
 - specs/project_plan.md
+- specs/completed/archive-index.md
 
 READ_IF_EXISTS:
 
-- specs/feature-\*.md
-- specs/component-\*.md
-- specs/task-\*.md
+# Active feature specs (only if they exist)
 
-SUMMARY:
+- specs/features/\*.md
 
-Provide a concise summary of:
+# Active task specs (only if working on specific tasks)
 
-1. Current project phase and active tasks from specs/project_plan.md
-2. Any blocked items or pending requests
-3. Next recommended actions based on project status
+# Note: Task specs should be loaded individually when needed to avoid token bloat
