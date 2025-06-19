@@ -1,4 +1,4 @@
-# BENCHY
+# Claude Template
 
 ## Project Structure
 
