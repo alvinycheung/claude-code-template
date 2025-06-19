@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "supabase": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@supabase/mcp-server-supabase@latest",
+        "--read-only",
+        "--project-ref=ixmfxfpfxlnryqufygpr"
+      ],
+      "env": {
+        "SUPABASE_ACCESS_TOKEN": "sbp_76d575f2825fa268e804d667185166a02c1bd6df"
+      }
+    },
+    "mcpServers": {
+      "react-native-debugger-mcp": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@twodoorsdev/react-native-debugger-mcp"
+        ]
+      }
+    }
+  }
+}
