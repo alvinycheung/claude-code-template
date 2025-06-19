@@ -60,7 +60,7 @@ _As a user working with Claude, I want consistent code quality so that my projec
 
 _Links to granular task specifications_
 
-- [ ] Create universal code standards document → `specs/tasks/code-standards-system/universal-standards.md`
+- [✅] Create universal code standards document → `specs/tasks/code-standards-system/universal-standards.md`
 - [ ] Create JavaScript/TypeScript standards → `specs/tasks/code-standards-system/javascript-standards.md`
 - [ ] Create Python standards → `specs/tasks/code-standards-system/python-standards.md`
 - [ ] Create code review checklist → `specs/tasks/code-standards-system/review-checklist.md`
