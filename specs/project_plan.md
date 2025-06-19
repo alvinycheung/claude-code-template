@@ -16,20 +16,20 @@
 
 ## Current Focus
 
-**Active Feature**: Code Standards System
-**Current Task**: Planning feature specifications
-**Next Up**: Create code-standards feature spec
+**Active Feature**: Enhanced Context Loading
+**Current Task**: Updating /prime command with intelligent loading
+**Next Up**: Implement project type detection and smart context loading
 
 ## Active Features
 
 _Features currently being worked on or planned_
 
-| Feature                  | Status     | Spec Link                                    | Priority | Owner  |
-| ------------------------ | ---------- | -------------------------------------------- | -------- | ------ |
-| Code Standards System    | 📋 Planned | `specs/features/code-standards-system.md`    | High     | Claude |
-| Enhanced Context Loading | 📋 Planned | `specs/features/enhanced-context-loading.md` | High     | Claude |
-| Testing Integration      | 📋 Planned | `specs/features/testing-integration.md`      | Medium   | Claude |
-| Project Type Detection   | 📋 Planned | `specs/features/project-type-detection.md`   | Medium   | Claude |
+| Feature                  | Status         | Spec Link                                    | Priority | Owner  |
+| ------------------------ | -------------- | -------------------------------------------- | -------- | ------ |
+| Code Standards System    | 🔄 In Progress | `specs/features/code-standards-system.md`    | High     | Claude |
+| Enhanced Context Loading | 🔄 In Progress | `specs/features/enhanced-context-loading.md` | High     | Claude |
+| Testing Integration      | 📋 Planned     | `specs/features/testing-integration.md`      | Medium   | Claude |
+| Project Type Detection   | 📋 Planned     | `specs/features/project-type-detection.md`   | Medium   | Claude |
 
 ## Project Phases
 
