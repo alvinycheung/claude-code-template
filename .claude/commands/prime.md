@@ -1,8 +1,10 @@
 # Context Window Prime
 
 RUN:
-    git ls-files
+
+- git ls-files
 
 READ:
-    README.md
-    ai_docs/claude_code_fresh_tutorials.md
+
+- README.md
+- ai_docs/project-management.md
