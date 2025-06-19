@@ -1,7 +1,7 @@
 # Task Specification: Update /prime Command with Intelligent Loading
 
 **Feature**: Enhanced Context Loading → `specs/features/enhanced-context-loading.md`
-**Status**: [ ] **Todo**
+**Status**: [✅] **Complete**
 **Priority**: High
 **Estimated Effort**: Large (4-6 hours)
 **Assigned**: Claude
