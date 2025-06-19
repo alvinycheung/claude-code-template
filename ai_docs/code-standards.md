@@ -34,6 +34,13 @@ This document establishes fundamental coding principles and practices that apply
 - Use appropriate data structures for the task
 - Monitor and measure performance-critical sections
 
+### 5. Test-Driven Development (TDD)
+
+- Write tests before implementing functionality
+- All code should have reasonable test coverage to prevent breakage
+- Tests should be clear, maintainable, and reliable
+- Use the Red-Green-Refactor cycle: Write failing test → Make it pass → Refactor
+
 ## Naming Conventions
 
 ### Variables
@@ -154,6 +161,36 @@ This document establishes fundamental coding principles and practices that apply
 - Optimize database queries
 - Use appropriate HTTP status codes
 
+## Testing Standards
+
+### Test Coverage Requirements
+
+- All public functions/methods must have tests
+- Critical business logic must have comprehensive test coverage
+- Edge cases and error conditions should be tested
+- Aim for 80%+ code coverage, but prioritize quality over quantity
+
+### Test Organization
+
+- Group tests logically (unit, integration, end-to-end)
+- Use descriptive test names that explain what is being tested
+- Follow AAA pattern: Arrange, Act, Assert
+- Keep tests independent and isolated
+
+### Test Types
+
+- **Unit Tests**: Test individual functions/methods in isolation
+- **Integration Tests**: Test component interactions
+- **End-to-End Tests**: Test complete user workflows
+- **Contract Tests**: Test API contracts and data formats
+
+### Test Maintainability
+
+- Tests should be as simple as possible
+- Use test helpers and utilities to reduce duplication
+- Update tests when requirements change
+- Remove or fix flaky tests immediately
+
 ## Code Organization
 
 ### File Structure
@@ -200,52 +237,6 @@ This document establishes fundamental coding principles and practices that apply
 - Document request/response formats
 - Provide error code explanations
 
-## Examples & Anti-patterns
-
-### Good Examples
-
-```javascript
-// Good: Descriptive function name and clear logic
-function calculateTotalPrice(items, taxRate) {
-  const subtotal = items.reduce((sum, item) => sum + item.price, 0);
-  const tax = subtotal * taxRate;
-  return subtotal + tax;
-}
-
-// Good: Clear error handling
-async function getUserById(id) {
-  try {
-    const user = await userRepository.findById(id);
-    if (!user) {
-      throw new NotFoundError(`User with id ${id} not found`);
-    }
-    return user;
-  } catch (error) {
-    logger.error('Failed to get user', { id, error: error.message });
-    throw error;
-  }
-}
-```
-
-### Anti-patterns to Avoid
-
-```javascript
-// Bad: Unclear naming and no error handling
-function calc(x, y) {
-  return x.map((i) => i.p).reduce((a, b) => a + b) * y;
-}
-
-// Bad: Exposing internal details
-function getUser(id) {
-  return db.query('SELECT * FROM users WHERE id = ' + id);
-}
-
-// Bad: No validation
-function createUser(userData) {
-  return database.save(userData);
-}
-```
-
 ## Integration with Development Workflow
 
 ### Before Writing Code
@@ -254,36 +245,26 @@ function createUser(userData) {
 2. Understand the existing codebase patterns
 3. Plan the implementation approach
 4. Consider security and performance implications
+5. Write failing tests for the functionality (TDD Red phase)
 
 ### During Development
 
 1. Follow established naming conventions
-2. Implement proper error handling
-3. Add appropriate logging
-4. Write self-documenting code
+2. Implement code to make tests pass (TDD Green phase)
+3. Implement proper error handling
+4. Add appropriate logging
+5. Write self-documenting code
+6. Refactor code while keeping tests green (TDD Refactor phase)
 
 ### Before Committing
 
-1. Review code against these standards
-2. Ensure all functions are properly documented
-3. Verify error handling is implemented
-4. Check for security vulnerabilities
-5. Test performance with realistic data
-
-## Language-Specific Standards
-
-This document establishes universal principles. Language-specific implementations should:
-
-- Extend these principles with language-specific conventions
-- Provide concrete examples in the target language
-- Reference language-specific tools and libraries
-- Address language-specific security considerations
-
-See language-specific documentation:
-
-- `javascript-standards.md` for JavaScript/TypeScript
-- `python-standards.md` for Python
-- Additional languages as needed
+1. Ensure all tests are passing
+2. Review code against these standards
+3. Verify test coverage is adequate
+4. Ensure all functions are properly documented
+5. Verify error handling is implemented
+6. Check for security vulnerabilities
+7. Test performance with realistic data
 
 ---
 
