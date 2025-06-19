@@ -42,9 +42,20 @@ project: Add new Phase 2 requirements
 spec(auth-system): Create authentication feature specification
 spec(auth-system): Move auth-system to completed archive
 spec(payment): Update payment feature spec with new requirements
+spec(dashboard): Update with implementation details and decisions
 ```
 
 **File Location**: Various spec files
+
+### Documentation Updates
+
+```bash
+docs: Update README with new project structure
+docs: Update README with completed auth feature
+project: Update README for Phase 2 completion
+```
+
+**File Location**: `README.md` and related documentation
 
 ## Quick Lookup
 
@@ -63,6 +74,8 @@ spec(payment): Update payment feature spec with new requirements
 - Feature marked complete [✅] in project plan
 - Spec moved to completed/ archive
 - Project plan updated with milestone
+- README.md updated with structural/major changes
+- Specs updated with significant implementation details
 
 🚫 **Don't commit for:**
 

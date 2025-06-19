@@ -14,10 +14,19 @@ claude-template/
 │   └── settings.json          # Global Claude settings
 ├── ai_docs/                   # AI-related documentation
 │   ├── anthropic-tool-use.md  # Anthropic tool usage guide
-|   ├── project
+│   ├── code-standards.md      # Universal code standards and best practices
+│   ├── project-management.md  # AI-assisted project management system
 │   ├── react-native.md       # React Native development docs
 │   └── supabase.md           # Supabase integration docs
-├── specs/                     # Project specifications (empty)
+├── specs/                     # Project specifications and management
+│   ├── completed/             # Archived completed work
+│   │   └── archive-index.md   # Quick reference to completed work
+│   ├── features/              # Major feature specifications
+│   │   └── _template.md       # Feature spec template
+│   ├── tasks/                 # Granular task breakdowns
+│   │   └── _template.md       # Task spec template
+│   ├── COMMIT_REFERENCE.md    # Commit message conventions
+│   └── project_plan.md        # Master project overview
 ├── .gitignore                 # Git ignore rules
 ├── .mcp.json                  # MCP server configuration (local only)
 ├── CLAUDE.md                  # Claude-specific documentation
@@ -59,8 +68,18 @@ This will give you:
 ### AI Documentation
 
 - `ai_docs/anthropic-tool-use.md` - Guide for using Anthropic's tool-calling features
+- `ai_docs/code-standards.md` - Universal code standards and best practices
+- `ai_docs/project-management.md` - AI-assisted project management system with hierarchical specs
 - `ai_docs/react-native.md` - React Native development documentation
 - `ai_docs/supabase.md` - Supabase integration and usage guide
+
+### Project Specifications
+
+- `specs/project_plan.md` - Master project overview and phase management
+- `specs/COMMIT_REFERENCE.md` - Commit message conventions and quick reference
+- `specs/features/` - Major feature specifications (loaded on demand)
+- `specs/tasks/` - Granular task breakdowns (loaded when actively working)
+- `specs/completed/` - Archived completed work for reference
 
 ### Project Files
 
@@ -98,8 +117,24 @@ This will give you:
 
 1. **Use with Claude Code:** Open this project in Claude Code to get enhanced AI assistance
 2. **Load project context:** Use `/prime` command to quickly load project understanding
-3. **Add documentation:** Place AI-related docs in `ai_docs/` directory
-4. **Store specifications:** Use `specs/` directory for project requirements
+3. **Follow project management system:** Use hierarchical specs (project → features → tasks)
+4. **Maintain documentation:** Keep README.md and specs current during development
+5. **Use proper commit conventions:** Follow patterns in `specs/COMMIT_REFERENCE.md`
+
+#### Project Management System
+
+This template includes a comprehensive AI-assisted project management system:
+
+- **Hierarchical Specs**: Break work into project → features → tasks for token efficiency
+- **Status Tracking**: Clear progress indicators and blocker management
+- **Documentation Maintenance**: Built-in workflows for keeping docs current
+- **Archive System**: Completed work moved to `specs/completed/` for reference
+
+**Key Files:**
+
+- `ai_docs/project-management.md` - Complete system documentation
+- `specs/project_plan.md` - Always loaded by `/prime` command
+- `specs/COMMIT_REFERENCE.md` - Commit message quick reference
 
 ### Claude Code Integration
 
@@ -114,3 +149,14 @@ To use with Claude Code:
 1. Open the project in Claude Code
 2. Type `/prime` to load the project context
 3. Claude will have immediate understanding of the codebase structure and key files
+4. Claude will automatically manage project specs and maintain documentation
+5. Use the built-in project management workflows for efficient development
+
+The `/prime` command automatically loads:
+
+- Master project plan (`specs/project_plan.md`)
+- Project management guidelines (`ai_docs/project-management.md`)
+- Universal code standards (`ai_docs/code-standards.md`)
+- Archive index for completed work (`specs/completed/archive-index.md`)
+
+This gives Claude complete context for managing your project efficiently.

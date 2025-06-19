@@ -12,8 +12,7 @@ _No completed features yet_
 
 ### 2024
 
-- **2024-01-XX**: `code-standards-system_universal-standards.md` - Implemented comprehensive universal code standards with TDD focus
-- **2024-01-XX**: `enhanced-context-loading_prime-enhancement.md` - Enhanced /prime command with intelligent project detection and context loading
+_No completed tasks yet_
 
 ## Key Decisions Archive
 
@@ -26,7 +25,7 @@ _No completed features yet_
 ## Archive Statistics
 
 - **Total Completed Features**: 0
-- **Total Completed Tasks**: 2
+- **Total Completed Tasks**: 0
 - **Last Updated**: [Auto-updated when items are archived]
 
 ---

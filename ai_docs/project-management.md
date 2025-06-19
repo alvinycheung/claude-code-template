@@ -90,7 +90,12 @@ specs/
 2. Note any blockers: [🚫 Blocked: reason]
 3. Track dependencies: [⏳ Waiting: dependency]
 4. Update related specs as needed
-5. Commit when task completed:
+5. **Maintain project documentation**:
+   - Update README.md if project structure changes
+   - Update feature specs with implementation details/decisions
+   - Update project_plan.md with significant progress or changes
+   - Keep spec status current as work progresses
+6. Commit when task completed:
    - "task([feature-name]): Complete [task-name] [brief-description]"
 ```
 
@@ -107,6 +112,42 @@ specs/
 6. Commit with spec-based prefix:
    - "feature([feature-name]): Complete [feature] - move to archive"
    - "project: Update project plan with completed milestone"
+```
+
+### Documentation Maintenance
+
+#### README.md Updates
+
+```markdown
+# Update README.md when:
+
+- Project structure changes (new directories, major files)
+- New major features are added or completed
+- Setup/installation instructions change
+- Key project information changes (purpose, goals, etc.)
+- New documentation is added to ai_docs/
+
+# README.md update commits:
+
+- "docs: Update README with [specific change]"
+- "project: Update README for [feature/change]"
+```
+
+#### Spec Maintenance During Development
+
+```markdown
+# Keep specs current by:
+
+- Adding implementation notes to feature specs as you work
+- Updating task specs with findings/decisions
+- Recording blockers and solutions in relevant specs
+- Updating status indicators as work progresses
+- Adding "Notes & Learnings" sections to specs
+
+# Spec maintenance commits:
+
+- "spec([feature-name]): Update with implementation details"
+- "spec([feature-name]): Document [decision/finding]"
 ```
 
 ### Status Icons & Conventions
