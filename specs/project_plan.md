@@ -1,59 +1,53 @@
-# Main Project Plan
+# Project Plan: Claude Template Development
 
-**Last Updated:** 2024-12-19
-**Status:** Active Planning
-**Current Phase:** Project Foundation
+## Current Status
 
-## Project Overview
+- **Phase:** Template Setup & Documentation
+- **Active Sprint:** Initial Setup
+- **Last Updated:** 2024-12-19
 
-This is the master project plan that tracks high-level progress and coordinates with detailed planning documents in the `/specs` directory.
+## High-Level Roadmap
 
-## Quick Status Dashboard
+- [x] Phase 1: Repository Setup & Git Integration
+- [x] Phase 2: Documentation Structure & README
+- [ ] Phase 3: Project Management System Implementation
+- [ ] Phase 4: Template Customization & Best Practices
 
-- **Active Tasks:** 1
-- **Completed Tasks:** 2
-- **Blocked Tasks:** 0
-- **Active Detail Plans:** 0
+## Active Features
 
-## Current Active Phase
+- [Project Management System](./feature-project-management.md) - Status: In Progress
 
-### Phase 1: Project Foundation
+## Current Priority Tasks
 
-- [x] Complete project template setup
-- [x] Establish project management workflow
-- [ ] Set up development environment
+1. [ ] Finalize project management system implementation
+2. [ ] Test /prime command integration with new spec structure
+3. [ ] Create example feature and task spec files
 
-## Planning Hierarchy
+## Blocked Items
 
-### Active Detail Plans
+_No blocked items currently_
 
-> These are the current detailed planning documents that break down the work:
+## Completed This Session
 
-_No active detail plans yet - they will be listed here as they are created_
-
-### Completed Detail Plans
-
-> Moved to `/specs/completed/` - still referenced when relevant:
-
-_No completed detail plans yet_
-
-## Next Actions
-
-1. **Immediate:** Set up project management workflow
-2. **Next:** Define specific project goals and create first detail plan
-3. **Future:** Begin implementation based on detailed plans
+- [x] Enhanced README.md with accurate project structure
+- [x] Updated project management documentation with hierarchical system
+- [x] Created main project_plan.md template
 
 ## Notes & Decisions
 
-- Using hierarchical planning: Main plan → Detail plans → Sub-detail plans (up to 3 levels)
-- Completed plans move to `/specs/completed/` to keep this view clean
-- Detail plans are referenced by filename for easy navigation
+- Decided to use hierarchical spec system for better token management
+- Will archive completed specs to reduce /prime token usage
+- Template focuses on Claude Code integration and AI development workflows
 
----
+## Session Request Tracking
 
-**Plan Management:**
+### Active Requests (Current Session)
 
-- This file is updated whenever high-level status changes
-- All task completions should be reflected here and committed with `docs(plan)` scope
-- Detail plans are created as `specs/[feature-name]-plan.md`
-- Sub-detail plans are created as `specs/[feature-name]-[component]-plan.md`
+1. [x] Help fill out project structure section in README - 2024-12-19 - COMPLETE
+2. [x] Modify project management system for hierarchical planning - 2024-12-19 - COMPLETE
+3. [ ] Create feature spec for project management system - 2024-12-19 - IN PROGRESS
+
+### Completed This Session
+
+- [x] README project structure documentation - 2024-12-19
+- [x] Enhanced project management system design - 2024-12-19
