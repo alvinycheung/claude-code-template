@@ -63,7 +63,7 @@ _As a user working with Claude, I want intelligent context loading so that Claud
 _Links to granular task specifications_
 
 - [ ] Create project type detection system → `specs/tasks/enhanced-context-loading/project-type-detection.md`
-- [✅] Update /prime command with intelligent loading → `specs/tasks/enhanced-context-loading/prime-enhancement.md`
+- [✅] Update /prime command with intelligent loading → `specs/completed/tasks/2024-01-XX_enhanced-context-loading_prime-enhancement.md`
 - [ ] Add git activity analysis → `specs/tasks/enhanced-context-loading/git-analysis.md`
 - [ ] Create performance optimizations → `specs/tasks/enhanced-context-loading/performance-optimization.md`
 
