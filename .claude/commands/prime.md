@@ -9,6 +9,7 @@ RUN:
 - git log --oneline -10
 - git branch --show-current
 - git status --porcelain
+- claude mcp list
 
 READ:
 
