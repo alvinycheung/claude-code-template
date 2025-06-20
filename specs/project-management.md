@@ -4,6 +4,13 @@
 
 This system integrates Claude AI with JIRA via Model Context Protocol (MCP) for efficient project management. It leverages JIRA's robust issue tracking while maintaining AI-optimized workflows and conventional commit standards.
 
+### Project Configuration
+
+- **JIRA Project**: Project Title (Key: PROJECTKEY)
+- **Confluence Space**: Confluence Space Title
+- **Cloud ID**: CLOUD-ID
+- **Site URL**: SITE-URL
+
 ## Core Philosophy
 
 - **JIRA-Centric**: All project management happens in JIRA (Epics → Stories → Tasks)
