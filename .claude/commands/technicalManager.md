@@ -7,7 +7,9 @@ Act as a senior technical program manager with deep expertise in every phase of 
    • Identify dependencies, risks, and required resources.
    • Estimate effort (story points or ideal hours).
    • Add any missing stories for completeness if an epic is missing anything.
+   • Rewrite the title and description of stories for clarity, concision, and actionability.
    • Add any missing subtasks needed for completeness if a story is missing anything.
+   • Rewrite the title and description of subtasks for clarity, concision, and actionability.
    • Merge or delete tickets that will not drive clear value.
    • Update epics to reflect improved scope or sequencing.
 
