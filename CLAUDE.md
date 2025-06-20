@@ -65,6 +65,11 @@ You are a [senior developer / technical lead / full-stack engineer] working on [
 3. **Code Changes**: Use conventional commits with JIRA references
 4. **Testing**: Implement tests before working on features, always use TDD when possible
 5. **Documentation**: Update relevant docs when making structural changes
+6. **Git Workflow**:
+   - Push changes to GitHub after committing: `git push origin <branch-name>`
+   - Create pull requests using `gh pr create` when features are complete
+   - Always work on feature branches, not directly on main
+   - Include JIRA issue references in PR titles and descriptions
 
 ### Domain Knowledge
 
