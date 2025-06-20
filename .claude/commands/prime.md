@@ -18,7 +18,6 @@ READ:
 - specs/project-management.md
 - specs/code-standards.md
 - specs/project_plan.md
-- specs/jira_integration.md
 
 Always use conventional commits
 
