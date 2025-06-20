@@ -42,7 +42,7 @@ This system integrates Claude AI with JIRA via Model Context Protocol (MCP) for 
 
 ### Status Workflow
 
-**Backlog** → **Selected** → **In Progress** → **Code Review** → **Testing** → **Done**
+**Backlog** → **Move to Current Sprint & automaticlaly To Do** → **In Progress** → **Code Review** → **Testing** → **Done**
 
 ### Token Optimization
 
