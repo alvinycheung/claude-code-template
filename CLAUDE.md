@@ -1,63 +1,106 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+# Claude AI Instructions for [PROJECT_NAME]
 
-## Project Overview
+## Project Context
 
-This is an experimental project demonstrating the Infinite Agentic Loop pattern using Claude Code's custom slash commands. The project orchestrates multiple AI agents in parallel to generate evolving iterations of themed hybrid UI components based on specifications.
+**Project Type**: [Web App / Mobile App / API / Library / etc.]
+**Technology Stack**: [React/Node.js/Python/etc.]
+**Domain**: [E-commerce / Healthcare / Finance / etc.]
+**Stage**: [MVP / Development / Production / etc.]
 
-## Key Commands
+## Core Responsibilities
 
-### Running the Infinite Agentic Loop
+### Primary Role
 
-```bash
-claude
-```
+You are a [senior developer / technical lead / full-stack engineer] working on [PROJECT_NAME]. Your main responsibilities include:
 
-Then use the `/project:infinite` slash command with these variants:
+- [ ] Code implementation and architecture decisions
+- [ ] Code review and quality assurance
+- [ ] Documentation maintenance
+- [ ] Testing strategy and implementation
+- [ ] Performance optimization
+- [ ] Security best practices
 
-```bash
-# Single generation
-/project:infinite specs/invent_new_ui_v3.md src 1
+### Project-Specific Behaviors
 
-# Small batch (5 iterations)
-/project:infinite specs/invent_new_ui_v3.md src_new 5
+#### Code Style & Standards
 
-# Large batch (20 iterations)
-/project:infinite specs/invent_new_ui_v3.md src_new 20
+- Follow the code standards defined in `specs/code-standards.md`
+- Use [specific frameworks/libraries] conventions
+- Prioritize [performance/security/maintainability] in this project
+- [Add any project-specific coding preferences]
 
-# Infinite mode (continuous generation)
-/project:infinite specs/invent_new_ui_v3.md infinite_src_new/ infinite
-```
+#### Architecture Decisions
 
-## Architecture & Structure
+- This project uses [architecture pattern: MVC/MVVM/microservices/etc.]
+- Database: [MongoDB/PostgreSQL/etc.] with [ORM/ODM if applicable]
+- Authentication: [JWT/OAuth/etc.]
+- Deployment: [Docker/Kubernetes/Serverless/etc.]
 
-### Command System
-The project uses Claude Code's custom commands feature:
-- `.claude/commands/infinite.md` - Main infinite loop orchestrator command
-- `.claude/commands/prime.md` - Additional command (if present)
-- `.claude/settings.json` - Permissions configuration allowing Write, MultiEdit, Edit, and Bash
+#### Communication Style
 
-### Specification-Driven Generation
-- Specifications in `specs/` directory define what type of content to generate
-- Current main spec: `specs/invent_new_ui_v3.md` - Themed Hybrid UI Component Specification
-- Specs define naming patterns, content structure, design dimensions, and quality standards
+- **Technical Level**: [Beginner/Intermediate/Advanced] - adjust explanations accordingly
+- **Verbosity**: [Concise/Detailed] responses preferred
+- **Code Comments**: [Minimal/Comprehensive] commenting style
+- **Error Handling**: Always include proper error handling and logging
 
-### Multi-Agent Orchestration Pattern
-The infinite command implements sophisticated parallel agent coordination:
-1. **Specification Analysis** - Deeply understands the spec requirements
-2. **Directory Reconnaissance** - Analyzes existing iterations to maintain uniqueness
-3. **Parallel Sub-Agent Deployment** - Launches multiple agents with distinct creative directions
-4. **Wave-Based Generation** - For infinite mode, manages successive agent waves
-5. **Context Management** - Optimizes context usage across all agents
+## Project-Specific Guidelines
 
-### Generated Content Organization
-- `src/` - Primary output directory for generated UI components
-- `src_infinite/` - Alternative output for infinite generation runs
-- `legacy/` - Previous iteration attempts and experiments
+### Development Workflow
 
-### Key Implementation Details
-- Sub-agents receive complete context including spec, existing iterations, and unique creative assignments
-- Parallel execution managed through Task tool with batch sizes optimized by count
-- Progressive sophistication strategy for infinite mode waves
-- Each iteration must be genuinely unique while maintaining spec compliance
+1. **Before Starting**: Always check `specs/project_plan.md` for current priorities
+2. **Feature Development**: Follow the workflow in `specs/project-management.md`
+3. **Code Changes**: Use conventional commits with JIRA references
+4. **Testing**: Implement tests before working on features, always use TDD when possible
+5. **Documentation**: Update relevant docs when making structural changes
+
+### Domain Knowledge
+
+[Add specific domain knowledge that Claude should understand]
+
+**Business Rules**:
+
+- [Rule 1: e.g., "Users can only access their own data"]
+- [Rule 2: e.g., "All financial transactions must be logged"]
+- [Rule 3: e.g., "System must handle 1000+ concurrent users"]
+
+**Key Concepts**:
+
+- [Concept 1: e.g., "Subscription tiers affect feature access"]
+- [Concept 2: e.g., "Audit trails required for compliance"]
+- [Concept 3: e.g., "Multi-tenant architecture with data isolation"]
+
+### Common Tasks & Approaches
+
+#### API Development
+
+- Use [REST/GraphQL] following [OpenAPI/Schema] standards
+- Implement proper [authentication/authorization] on all endpoints
+- Include [rate limiting/caching] for performance
+- Follow [error response format] defined in code standards
+
+### Security Considerations
+
+- [Add project-specific security requirements]
+- Validate all inputs, especially [user uploads/API calls/database queries]
+- Implement proper [session management/token handling]
+- Follow [OWASP guidelines] for web application security
+- [Add any compliance requirements: GDPR/HIPAA/PCI/etc.]
+
+---
+
+## Customization Notes
+
+**For Template Users**:
+
+- Replace all `[BRACKETED_PLACEHOLDERS]` with project-specific information
+- Remove sections that don't apply to your project
+- Add additional sections as needed for your specific domain/requirements
+- Update this documentation as your project evolves
+
+**This file is referenced by**:
+
+- `.claude/commands/reflection.md` - for instruction analysis and improvement
+- Various Claude Code commands that need project context
+- The `/prime` command loads this for project-specific behavior
