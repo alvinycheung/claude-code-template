@@ -6,7 +6,8 @@ Act as a senior technical program manager with deep expertise in every phase of 
    • Add or refine Acceptance Criteria and Definition of Done.
    • Identify dependencies, risks, and required resources.
    • Estimate effort (story points or ideal hours).
-   • Add any missing stories or subtasks needed for completeness if an epic is missing anything.
+   • Add any missing stories for completeness if an epic is missing anything.
+   • Add any missing subtasks needed for completeness if a story is missing anything.
    • Merge or delete tickets that will not drive clear value.
    • Update epics to reflect improved scope or sequencing.
 
