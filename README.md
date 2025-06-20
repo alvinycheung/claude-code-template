@@ -18,15 +18,12 @@ claude-template/
 │   ├── project-management.md  # AI-assisted project management system
 │   ├── react-native.md       # React Native development docs
 │   └── supabase.md           # Supabase integration docs
-├── specs/                     # Project specifications and management
-│   ├── completed/             # Archived completed work
+├── specs/                     # Project specifications and JIRA MCP integration
+│   ├── completed/             # Historical project milestones
 │   │   └── archive-index.md   # Quick reference to completed work
-│   ├── features/              # Major feature specifications
-│   │   └── _template.md       # Feature spec template
-│   ├── tasks/                 # Granular task breakdowns
-│   │   └── _template.md       # Task spec template
-│   ├── COMMIT_REFERENCE.md    # Commit message conventions
-│   └── project_plan.md        # Master project overview
+│   ├── COMMIT_REFERENCE.md    # Commit message conventions with JIRA integration
+│   ├── jira_integration.md    # JIRA MCP setup and conventions
+│   └── project_plan.md        # Master project overview with JIRA references
 ├── .gitignore                 # Git ignore rules
 ├── .mcp.json                  # MCP server configuration (local only)
 ├── CLAUDE.md                  # Claude-specific documentation
@@ -73,13 +70,12 @@ This will give you:
 - `ai_docs/react-native.md` - React Native development documentation
 - `ai_docs/supabase.md` - Supabase integration and usage guide
 
-### Project Specifications
+### Project Specifications & JIRA Integration
 
-- `specs/project_plan.md` - Master project overview and phase management
-- `specs/COMMIT_REFERENCE.md` - Commit message conventions and quick reference
-- `specs/features/` - Major feature specifications (loaded on demand)
-- `specs/tasks/` - Granular task breakdowns (loaded when actively working)
-- `specs/completed/` - Archived completed work for reference
+- `specs/project_plan.md` - Master project overview with JIRA project references
+- `specs/jira_integration.md` - JIRA MCP setup, conventions, and best practices
+- `specs/COMMIT_REFERENCE.md` - JIRA-based commit message conventions
+- **JIRA Issues** (via MCP) - Epics, Stories, Tasks, and Sub-tasks managed in JIRA
 
 ### Project Files
 
@@ -121,20 +117,22 @@ This will give you:
 4. **Maintain documentation:** Keep README.md and specs current during development
 5. **Use proper commit conventions:** Follow patterns in `specs/COMMIT_REFERENCE.md`
 
-#### Project Management System
+#### Project Management System with JIRA MCP
 
-This template includes a comprehensive AI-assisted project management system:
+This template includes a comprehensive AI-assisted project management system integrated with JIRA:
 
-- **Hierarchical Specs**: Break work into project → features → tasks for token efficiency
-- **Status Tracking**: Clear progress indicators and blocker management
-- **Documentation Maintenance**: Built-in workflows for keeping docs current
-- **Archive System**: Completed work moved to `specs/completed/` for reference
+- **JIRA MCP Integration**: Direct connection between Claude and JIRA for seamless project management
+- **Hierarchical Issue Management**: Epics → Stories → Tasks/Sub-tasks in JIRA
+- **Status Tracking**: Leverage JIRA's native workflows and status management
+- **Documentation Maintenance**: Built-in workflows for keeping docs and JIRA current
+- **Query Optimization**: Smart loading of JIRA data only when needed
 
 **Key Files:**
 
-- `ai_docs/project-management.md` - Complete system documentation
-- `specs/project_plan.md` - Always loaded by `/prime` command
-- `specs/COMMIT_REFERENCE.md` - Commit message quick reference
+- `ai_docs/project-management.md` - Complete JIRA MCP system documentation
+- `specs/jira_integration.md` - JIRA MCP setup and conventions
+- `specs/project_plan.md` - Always loaded by `/prime` command with JIRA references
+- `specs/COMMIT_REFERENCE.md` - JIRA-based commit message conventions
 
 ### Claude Code Integration
 
@@ -157,6 +155,5 @@ The `/prime` command automatically loads:
 - Master project plan (`specs/project_plan.md`)
 - Project management guidelines (`ai_docs/project-management.md`)
 - Universal code standards (`ai_docs/code-standards.md`)
-- Archive index for completed work (`specs/completed/archive-index.md`)
 
 This gives Claude complete context for managing your project efficiently.

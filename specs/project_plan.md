@@ -20,14 +20,6 @@
 **Current Task**: [Specific task in progress]
 **Next Up**: [Next logical step to take]
 
-## Active Features
-
-_Features currently being worked on or planned_
-
-| Feature        | Status     | Spec Link                          | Priority       | Owner      |
-| -------------- | ---------- | ---------------------------------- | -------------- | ---------- |
-| [Feature Name] | 📋 Planned | `specs/features/[feature-name].md` | [High/Med/Low] | [Assignee] |
-
 ## Project Phases
 
 ### Phase 1: [Phase Name] 📋

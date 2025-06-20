@@ -5,7 +5,7 @@ RUN:
 # Basic project analysis
 
 - git ls-files
-- find specs -name "_.md" -not -path "specs/completed/_" -not -name "\_template.md"
+- find specs -name "_.md" -not -path "specs/completed/_"
 - git log --oneline -10
 - git branch --show-current
 - git status --porcelain
@@ -15,15 +15,11 @@ READ:
 # Core documents (always load)
 
 - README.md
-- ai_docs/project-management.md
-- ai_docs/code-standards.md
+- specs/project-management.md
+- specs/code-standards.md
 - specs/project_plan.md
-- specs/completed/archive-index.md
+- specs/jira_integration.md
 
-READ_IF_EXISTS:
+Always use conventional commits
 
-# Active specs (only if they exist)
-
-- specs/features/\*.md
-
-# Note: Task specs should be loaded individually when needed to avoid token bloat
+# Note: JIRA issues should be loaded via MCP on demand when working on specific features/tasks
