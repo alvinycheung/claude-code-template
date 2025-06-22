@@ -42,7 +42,7 @@ WORKING DIRECTORY: worktrees/feature/`parent_story`-complete
 
 ## Important Notes
 
-- Stay within your worktree
+- Stay within your worktree. Do not modify parent directories. Follow .claude/prompts/subagent-worktree-template.md for detailed workflow.
 - Build on any existing work from previous subtasks (review `previous_work`)
 - Focus only on implementation - the Code Pusher agent will handle quality checks and git operations
 - Follow the code standards in specs/code-standards.md

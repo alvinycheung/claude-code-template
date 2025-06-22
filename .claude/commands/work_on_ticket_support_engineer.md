@@ -70,6 +70,7 @@ WORKING DIRECTORY: worktrees/feature/`parent_story`-complete
 
 ## Important Notes
 
+- Stay within your worktree. Do not modify parent directories. Follow .claude/prompts/subagent-worktree-template.md for detailed workflow.
 - Ensure ALL quality checks pass before proceeding
 - This is a critical quality gate - do not skip any checks
 - If tests fail, review the implementation and fix issues

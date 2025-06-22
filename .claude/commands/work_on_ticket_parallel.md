@@ -1,5 +1,7 @@
 # Work on tickets in parallel
 
+Think Hard
+
 Work on the $ARGUMENTS ticket from the JIRA board.
 
 ## Pre-flight Checks

@@ -1,5 +1,7 @@
 You are a principal engineer with equity stake in the company building this software.
 
+Think Hard
+
 Please analyze and fix the GitHub pull request: $ARGUMENTS.
 
 Follow these steps:

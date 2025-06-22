@@ -1,5 +1,7 @@
 # Work on Ticket
 
+Think Hard
+
 You're a principal CTO with equity stake in the company building this software
 
 ## Your Responsibilities
@@ -20,15 +22,15 @@ Execute work units with sequential Sub Agent flow:
 
 1. Define work unit execution sequence:
 
-   - Step 1: Spawn three Sub Agents in parallel:
+   - Step 1: Spawn three Sub Agents in parallel and tell me what you say to each of them:
      - Engineer Sub Agent performs the implementation
      - Code Review Sub Agent responds to any code reviews that need work
      - Code Merging Engineer Sub Agent merges any pull requests that are completely approved
-   - Step 2: Spawn three Sub Agents in parallel:
+   - Step 2: Spawn three Sub Agents in parallel and tell me what you say to each of them:
      - Support Engineer Sub Agent reviews and assists with fixes
      - Code Review Sub Agent
      - Code Merging Engineer Sub Agent
-   - Step 3: Spawn three Sub Agents in parallel:
+   - Step 3: Spawn three Sub Agents in parallel and tell me what you say to each of them:
      - Project Manager Sub Agent verifies completion and updates
        tracking
      - Code Review Sub Agent
@@ -88,10 +90,7 @@ WORKING DIRECTORY: worktrees/feature/$ARGUMENTS-complete
 JIRA TICKET: [TICKET-ID]
 PARENT STORY: $ARGUMENTS
 PREVIOUS WORK: [List completed subtasks if any]
-
-Instructions:
-1. Read .claude/commands/prime.md and follow instructions to load context
-2. Read .claude/commands/work_on_ticket_engineer.md and follow all instructions
+Read .claude/commands/work_on_ticket_engineer.md and follow all instructions
 ```
 
 ### Project Manager Sub Agent Instructions
@@ -101,10 +100,7 @@ WORKING DIRECTORY: worktrees/feature/$ARGUMENTS-complete
 JIRA TICKET: [TICKET-ID]
 PARENT STORY: $ARGUMENTS
 PREVIOUS WORK: [List completed subtasks if any]
-
-Instructions:
-1. Read .claude/commands/prime.md and follow instructions to load context
-2. Read .claude/commands/work_on_ticket_project_manager.md and follow all instructions
+Read .claude/commands/work_on_ticket_project_manager.md and follow all instructions
 ```
 
 ### Support Engineer Sub Agent Instructions
@@ -115,9 +111,7 @@ JIRA TICKET: [TICKET-ID]
 PARENT STORY: $ARGUMENTS
 PREVIOUS WORK: [List completed subtasks if any]
 
-Instructions:
-1. Read .claude/commands/prime.md and follow instructions to load context
-2. Read .claude/commands/work_on_ticket_support_engineer.md and follow all instructions
+Read .claude/commands/work_on_ticket_support_engineer.md and follow all instructions
 ```
 
 ### Code Review Engineer Sub Agent Instructions
@@ -126,9 +120,7 @@ Instructions:
 JIRA TICKET: [TICKET-ID]
 PARENT STORY: $ARGUMENTS
 PREVIOUS WORK: [List completed subtasks if any]
-Instructions:
-1. Read .claude/commands/prime.md and follow instructions to load context
-2. Read .claude/commands/respond_to_all_code_reviews.md and follow all instructions
+Read .claude/commands/respond_to_all_code_reviews.md and follow all instructions
 ```
 
 ### Code Merging Engineer Sub Agent Instructions
@@ -137,7 +129,5 @@ Instructions:
 JIRA TICKET: [TICKET-ID]
 PARENT STORY: $ARGUMENTS
 PREVIOUS WORK: [List completed subtasks if any]
-Instructions:
-1. Read .claude/commands/prime.md and follow instructions to load context
-2. Read .claude/commands/merge_all_approved_pull_requests.md and follow all instructions
+Read .claude/commands/merge_all_approved_pull_requests.md and follow all instructions
 ```

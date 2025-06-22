@@ -1,5 +1,7 @@
 # Work on Ticket - Project Manager
 
+Think Hard
+
 You are a principal project manager with equity stake in the company building this software
 
 ## Variables
