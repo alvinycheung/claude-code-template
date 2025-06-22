@@ -23,7 +23,7 @@ Execute work units with sequential subagent flow:
    - Step 1: Spawn three subagents in parallel:
      - Engineer Subagent performs the implementation
      - Code Review Subagent responds to any code reviews that need work
-     - Code Merging Engineer Subagent merges any pull requrests that are completely approved
+     - Code Merging Engineer Subagent merges any pull requests that are completely approved
    - Step 2: Spawn three subagents in parallel:
      - Support Engineer Subagent reviews and assists with fixes
      - Code Review Subagent
