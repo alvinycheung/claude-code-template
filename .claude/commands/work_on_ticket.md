@@ -7,7 +7,7 @@ You're a principal CTO with equity stake in the company building this software
 ## 1. Initial Analysis
 
 1. Fetch $ARGUMENTS details from JIRA using Atlassian MCP
-2. Check for subtasks from the fetched data
+2. Check for subtasks in "to do" from the fetched data
 3. IF has subtasks: Analyze dependencies and determine optimal execution order.
    Order subtasks by:
    1. Explicit JIRA dependencies/blockers
@@ -20,10 +20,19 @@ Execute work units with sequential subagent flow:
 
 1. Define work unit execution sequence:
 
-   - Step 1: Engineer subagent performs the implementation
-   - Step 2: Support Engineer subagent reviews and assists with fixes
-   - Step 3: Project Manager subagent verifies completion and updates
-     tracking
+   - Step 1: Spawn three subagents in parallel:
+     - Engineer Subagent performs the implementation
+     - Code Review Subagent responds to any code reviews that need work
+     - Code Merging Engineer Subagent merges any pull requrests that are completely approved
+   - Step 2: Spawn three subagents in parallel:
+     - Support Engineer Subagent reviews and assists with fixes
+     - Code Review Subagent
+     - Code Merging Engineer Subagent
+   - Step 3: Spawn three subagents in parallel:
+     - Project Manager Subagent verifies completion and updates
+       tracking
+     - Code Review Subagent
+     - Code Merging Engineer Subagent
 
 2. Determine execution flow:
 
@@ -109,4 +118,26 @@ PREVIOUS WORK: [List completed subtasks if any]
 Instructions:
 1. Read .claude/commands/prime.md and follow instructions to load context
 2. Read .claude/commands/work_on_ticket_support_engineer.md and follow all instructions
+```
+
+### Code Review Engineer Subagent Instructions
+
+```
+JIRA TICKET: [TICKET-ID]
+PARENT STORY: $ARGUMENTS
+PREVIOUS WORK: [List completed subtasks if any]
+Instructions:
+1. Read .claude/commands/prime.md and follow instructions to load context
+2. Read .claude/commands/respond_to_all_code_reviews.md and follow all instructions
+```
+
+### Code Merging Engineer Subagent Instructions
+
+```
+JIRA TICKET: [TICKET-ID]
+PARENT STORY: $ARGUMENTS
+PREVIOUS WORK: [List completed subtasks if any]
+Instructions:
+1. Read .claude/commands/prime.md and follow instructions to load context
+2. Read .claude/commands/merge_all_approved_pull_requests.md and follow all instructions
 ```

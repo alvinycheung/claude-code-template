@@ -56,10 +56,11 @@ For each PR requiring work:
 ```bash
 # Ensure worktree exists
 BRANCH_NAME=$(gh pr view PR_NUMBER --json headRefName -q .headRefName)
-WORKTREE_PATH="worktrees/${BRANCH_NAME#feature/}"
+STORY_ID=$(echo "$BRANCH_NAME" | grep -oE 'STORY-[0-9]+' || echo "STORY-XX")
+WORKTREE_PATH="worktrees/${STORY_ID}-review"
 
 if [ ! -d "$WORKTREE_PATH" ]; then
-  ./scripts/setup-worktree.sh "$BRANCH_NAME" "STORY-XX"
+  ./scripts/setup-worktree.sh "cr/${STORY_ID}" "${STORY_ID}"
 fi
 ```
 
@@ -68,24 +69,25 @@ Spawn agent with instructions:
 ```
 You are a Principal Engineer with stake in the company building this product and you are addressing code review feedback on PR #[PR_NUMBER].
 
-WORKING DIRECTORY: worktrees/[BRANCH_NAME]
+WORKING DIRECTORY: worktrees/[STORY_ID]-review
 PRIORITY: [CRITICAL/HIGH/LOW]
 REVIEW SUMMARY: [What needs addressing]
 
 Tasks:
 1. Read .claude/commands/prime.md and follow instructions to load context
-2. cd [WORKTREE_PATH]
-3. Pull latest: git pull origin [BRANCH_NAME]
-4. Analyze review: gh pr view [PR_NUMBER] --comments
-5. Fix issues in priority order:
+2. Create worktree if needed: ./scripts/setup-worktree.sh cr/[STORY_ID] [STORY_ID]
+3. cd worktrees/[STORY_ID]-review
+4. Pull latest: git pull origin [BRANCH_NAME]
+5. Analyze review: gh pr view [PR_NUMBER] --comments
+6. Fix issues in priority order:
    - Bugs/errors first
    - Clear improvements second
    - Optional suggestions last
-6. Run quality checks: yarn lint:fix && yarn typecheck && yarn test
-7. Commit with descriptive messages
-8. Push: git push origin [BRANCH_NAME]
-9. Reply to review comments explaining changes
-10. Re-request review when done
+7. Run quality checks: yarn lint:fix && yarn typecheck && yarn test
+8. Commit with descriptive messages
+9. Push: git push origin [BRANCH_NAME]
+10. Reply to review comments explaining changes
+11. Re-request review when done
 
 Remember: Use engineering judgment. Document reasoning if you disagree with feedback.
 ```

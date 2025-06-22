@@ -20,7 +20,8 @@ WORKING DIRECTORY: worktrees/feature/`parent_story`-complete
 1. Read .claude/commands/prime.md and follow instructions to load context
 2. cd to your worktree directory: `cd worktrees/feature/$parent_story-complete`
 3. Review any previous work: `git log --oneline -5`
-4. Use JIRA MCP to get your ticket details and move to "In Progress":
+4. Merge main from github into this branch and deal with any merge conflicts
+5. Use JIRA MCP to get your ticket details and move to "In Progress":
    ```
    mcp__atlassian__editJiraIssue(
      cloudId: "840697aa-7447-4ad1-bd0e-3f528d107624",
@@ -28,13 +29,13 @@ WORKING DIRECTORY: worktrees/feature/`parent_story`-complete
      fields: { /* appropriate status transition */ }
    )
    ```
-5. Create branch: `git checkout -b feature/$ticket_id-description`
-6. Implement the feature following TDD practices:
+6. Create branch: `git checkout -b feature/$ticket_id-description`
+7. Implement the feature following TDD practices:
    - Write failing tests first
    - Implement code to make tests pass
    - Refactor while keeping tests green
-7. Make atomic commits: `"type(scope): description [$ticket_id]"`
-8. Report completion back to parent agent with:
+8. Make atomic commits: `"type(scope): description [$ticket_id]"`
+9. Report completion back to parent agent with:
    - Summary of implementation
    - List of files changed
    - Any challenges or decisions made
