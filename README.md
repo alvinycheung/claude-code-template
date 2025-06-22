@@ -207,3 +207,7 @@ The commands automatically maintain:
 - Consistent commit message formatting
 - Documentation updates as needed
 - Test coverage for new features
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=alvinycheung/claude-code-template&type=Date)](https://star-history.com/#alvinycheung/claude-code-template&Date)
