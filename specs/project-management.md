@@ -6,10 +6,10 @@ This system integrates Claude AI with JIRA via Model Context Protocol (MCP) for 
 
 ### Project Configuration
 
-- **JIRA Project**: Project Title (Key: PROJECTKEY)
-- **Confluence Space**: Confluence Space Title
-- **Cloud ID**: CLOUD-ID
-- **Site URL**: SITE-URL
+- **JIRA Project**: Storybooks (Key: STORY)
+- **Confluence Space**: Storybooks (Key: ST)
+- **Cloud ID**: 840697aa-7447-4ad1-bd0e-3f528d107624
+- **Site URL**: https://dotfun.atlassian.net
 
 ## Core Philosophy
 
@@ -24,7 +24,7 @@ This system integrates Claude AI with JIRA via Model Context Protocol (MCP) for 
 ### Session Start Protocol
 
 1. **Load** `specs/project_plan.md` (master context)
-2. **Connect** to JIRA via MCP for current project status
+2. **Connect** to JIRA via MCP for Storybooks project (STORY)
 3. **Review** active sprint and in-progress issues
 4. **Identify** next logical task based on priorities
 5. **Surface** any blockers or dependencies
@@ -41,15 +41,21 @@ This system integrates Claude AI with JIRA via Model Context Protocol (MCP) for 
 
 ### Issue Types & Usage
 
-- **Epic**: Major feature initiatives
-- **Story**: Feature specifications with acceptance criteria
-- **Task**: Implementation work
-- **Sub-task**: Granular development tasks
-- **Bug**: Defect tracking and resolution
+- **Epic** (ID: 10142): Major feature initiatives
+- **Story** (ID: 10141): Feature specifications with acceptance criteria
+- **Task** (ID: 10139): Implementation work
+- **Subtask** (ID: 10143): Granular development tasks
+- **Bug** (ID: 10140): Defect tracking and resolution
 
 ### Status Workflow
 
-**Backlog** → **Move to Current Sprint & automaticlaly To Do** → **In Progress** → **Code Review** → **Testing** → **Done**
+**Backlog** → **Move to Current Sprint & automatically To Do** → **In Progress** → **Code Review** → **Testing** → **Done**
+
+### MCP Integration Notes
+
+**Important**: When using JIRA MCP tools, always use the cloud ID, not the site URL: cloudId: "840697aa-7447-4ad1-bd0e-3f528d107624"
+
+Transition IDs vary by project configuration - query available transitions dynamically rather than hardcoding.
 
 ### Token Optimization
 
@@ -65,11 +71,11 @@ This system integrates Claude AI with JIRA via Model Context Protocol (MCP) for 
 ```markdown
 1. USER: "Let's add user authentication"
 2. CLAUDE: "I'll create a JIRA Epic and stories for this."
-3. Create JIRA Epic: [PROJ-100] User Authentication System
-4. Create Stories: [PROJ-101] Basic Login, [PROJ-102] OAuth
+3. Create JIRA Epic: [STORY-100] User Authentication System
+4. Create Stories: [STORY-101] Basic Login, [STORY-102] OAuth
 5. Update project_plan.md with Epic reference
 6. Commit: "feat: add authentication system to project plan"
-   Body: "References: PROJ-100, PROJ-101, PROJ-102"
+   Body: "References: STORY-100, STORY-101, STORY-102"
 ```
 
 ### Working on Issues
@@ -81,7 +87,7 @@ This system integrates Claude AI with JIRA via Model Context Protocol (MCP) for 
 4. Link related issues for dependencies
 5. Maintain documentation as needed
 6. Commit: "feat(auth): implement login validation"
-   Body: "References: PROJ-101"
+   Body: "References: STORY-101"
 ```
 
 ### Completing Work
@@ -92,7 +98,27 @@ This system integrates Claude AI with JIRA via Model Context Protocol (MCP) for 
 3. Close dependent sub-tasks
 4. Update project milestones in project_plan.md
 5. Commit: "feat: complete authentication system"
-   Body: "Closes: PROJ-100, PROJ-101, PROJ-102"
+   Body: "Closes: STORY-100, STORY-101, STORY-102"
+6. Push to GitHub: `git push origin feature/auth-system`
+7. Create PR: `gh pr create --title "feat: Authentication System [STORY-100]" --body "## Summary\n- Implements login/logout\n- OAuth integration\n\nCloses: STORY-100, STORY-101, STORY-102"`
+```
+
+### Pull Request Workflow
+
+```markdown
+1. Always work on feature branches: `git checkout -b feature/[JIRA-ID]-description`
+2. Push changes regularly: `git push -u origin feature/[JIRA-ID]-description`
+3. When feature is complete and tested:
+   - Ensure all tests pass
+   - Update documentation
+   - Create PR with: `gh pr create`
+   - Title format: "type: Description [JIRA-ID]"
+   - Body should include:
+     - Summary of changes
+     - JIRA references (Closes: STORY-XXX)
+     - Testing performed
+     - Any breaking changes
+4. Link PR to JIRA issue for visibility
 ```
 
 ## Best Practices
