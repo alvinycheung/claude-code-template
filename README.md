@@ -7,10 +7,17 @@ This project is organized as a Claude AI development template with documentation
 ```
 claude-template/
 ├── .claude/                    # Claude Code configuration
-│   ├── commands/
-│   │   ├── infinite.md        # Infinite mode command
-│   │   ├── prime.md           # Prime context command
-│   │   └── settings.local.json # Local Claude settings
+│   ├── commands/              # Custom Claude commands
+│   │   ├── claude_template_setup.md  # Template setup guide
+│   │   ├── infinite.md               # Infinite mode command
+│   │   ├── prime.md                  # Prime context command
+│   │   ├── respond_to_all_code_reviews.md  # Batch PR review responses
+│   │   ├── respond_to_pr.md          # Individual PR response
+│   │   ├── work_on_ticket.md         # General ticket workflow
+│   │   ├── work_on_ticket_engineer.md       # Engineer role workflow
+│   │   ├── work_on_ticket_parallel.md       # Parallel execution workflow
+│   │   ├── work_on_ticket_project_manager.md # PM role workflow
+│   │   └── work_on_ticket_support_engineer.md # Support role workflow
 │   └── settings.json          # Global Claude settings
 ├── ai_docs/                   # AI-related documentation
 │   ├── anthropic-tool-use.md  # Anthropic tool usage guide
@@ -58,9 +65,17 @@ This will give you:
 ### Claude Configuration
 
 - `.claude/settings.json` - Global Claude Code settings and permissions
-- `.claude/settings.local.json` - Local Claude Code settings (user-specific)
-- `.claude/commands/prime.md` - Custom command to load project context
-- `.claude/commands/infinite.md` - Infinite mode configuration
+- `.claude/commands/` - Custom Claude commands directory:
+  - `prime.md` - Load project context with key files and specs
+  - `infinite.md` - Infinite mode for continuous task execution
+  - `claude_template_setup.md` - Template setup and customization guide
+  - `work_on_ticket.md` - General workflow for JIRA ticket development
+  - `work_on_ticket_engineer.md` - Engineer-focused ticket workflow
+  - `work_on_ticket_parallel.md` - Parallel execution for complex tasks
+  - `work_on_ticket_project_manager.md` - PM perspective on ticket management
+  - `work_on_ticket_support_engineer.md` - Support-focused ticket workflow
+  - `respond_to_pr.md` - Automated PR review and response workflow
+  - `respond_to_all_code_reviews.md` - Batch processing for multiple PR reviews
 
 ### AI Documentation
 
@@ -138,22 +153,49 @@ This template includes a comprehensive AI-assisted project management system int
 
 This project includes Claude Code configuration for enhanced development experience:
 
-- **Custom Commands**: Use the `/prime` command in Claude Code to quickly load project context
+- **Custom Commands**: Multiple specialized commands for different workflows
 - **Permissions**: Pre-configured permissions for common development tasks (mkdir, mv, ls)
-- **Project Context**: The `.claude/commands/prime.md` file automatically reads key project files and shows the directory structure
+- **Project Context**: Commands automatically load relevant project files and specs
+
+#### Available Claude Commands
+
+1. **`/prime`** - Load project context
+   - Loads master project plan, project management guidelines, and code standards
+   - Analyzes git status, recent commits, and available MCP tools
+   - Essential for starting any development session
+
+2. **`/work_on_ticket [JIRA-ID]`** - General ticket workflow
+   - Loads ticket details from JIRA via MCP
+   - Creates feature branch and implements solution
+   - Handles testing, commits, and PR creation
+
+3. **Role-Specific Workflows:**
+   - `/work_on_ticket_engineer` - Engineering-focused approach with deep technical analysis
+   - `/work_on_ticket_project_manager` - PM perspective with stakeholder considerations
+   - `/work_on_ticket_support_engineer` - Support-focused with customer impact analysis
+   - `/work_on_ticket_parallel` - Parallel execution for complex multi-step tasks
+
+4. **Code Review Commands:**
+   - `/respond_to_pr [PR_URL]` - Analyze and respond to individual PR reviews
+   - `/respond_to_all_code_reviews` - Batch process multiple PR reviews
+
+5. **`/infinite`** - Continuous task execution mode
+   - Autonomous task management and completion
+   - Ideal for complex multi-step implementations
 
 To use with Claude Code:
 
 1. Open the project in Claude Code
-2. Type `/prime` to load the project context
-3. Claude will have immediate understanding of the codebase structure and key files
-4. Claude will automatically manage project specs and maintain documentation
-5. Use the built-in project management workflows for efficient development
+2. Start with `/prime` to load project context
+3. Use appropriate command for your task (e.g., `/work_on_ticket PROJ-123`)
+4. Claude will handle the complete workflow including:
+   - Branch creation and management
+   - Implementation with proper testing
+   - Commit with JIRA references
+   - PR creation when ready
 
-The `/prime` command automatically loads:
-
-- Master project plan (`specs/project_plan.md`)
-- Project management guidelines (`ai_docs/project-management.md`)
-- Universal code standards (`ai_docs/code-standards.md`)
-
-This gives Claude complete context for managing your project efficiently.
+The commands automatically maintain:
+- Proper JIRA integration and status updates
+- Consistent commit message formatting
+- Documentation updates as needed
+- Test coverage for new features
