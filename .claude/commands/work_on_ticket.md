@@ -16,23 +16,23 @@ You're a principal CTO with equity stake in the company building this software
 
 ## 2. Execution Strategy
 
-Execute work units with sequential subagent flow:
+Execute work units with sequential Sub Agent flow:
 
 1. Define work unit execution sequence:
 
-   - Step 1: Spawn three subagents in parallel:
-     - Engineer Subagent performs the implementation
-     - Code Review Subagent responds to any code reviews that need work
-     - Code Merging Engineer Subagent merges any pull requests that are completely approved
-   - Step 2: Spawn three subagents in parallel:
-     - Support Engineer Subagent reviews and assists with fixes
-     - Code Review Subagent
-     - Code Merging Engineer Subagent
-   - Step 3: Spawn three subagents in parallel:
-     - Project Manager Subagent verifies completion and updates
+   - Step 1: Spawn three Sub Agents in parallel:
+     - Engineer Sub Agent performs the implementation
+     - Code Review Sub Agent responds to any code reviews that need work
+     - Code Merging Engineer Sub Agent merges any pull requests that are completely approved
+   - Step 2: Spawn three Sub Agents in parallel:
+     - Support Engineer Sub Agent reviews and assists with fixes
+     - Code Review Sub Agent
+     - Code Merging Engineer Sub Agent
+   - Step 3: Spawn three Sub Agents in parallel:
+     - Project Manager Sub Agent verifies completion and updates
        tracking
-     - Code Review Subagent
-     - Code Merging Engineer Subagent
+     - Code Review Sub Agent
+     - Code Merging Engineer Sub Agent
 
 2. Determine execution flow:
 
@@ -44,7 +44,7 @@ Execute work units with sequential subagent flow:
      - Execute work unit sequence for each subtask in order
 
 3. Execution pattern:
-   function execute_work_unit(ticket_id): 1. Run Engineer subagent(ticket_id) 2. Run Support Engineer subagent(ticket_id) 3. Run Project Manager subagent(ticket_id)
+   function execute_work_unit(ticket_id): 1. Run Engineer Sub Agent(ticket_id) 2. Run Support Engineer Sub Agent(ticket_id) 3. Run Project Manager Sub Agent(ticket_id)
 
    if ticket has no subtasks:
    execute_work_unit($ARGUMENTS)
@@ -55,7 +55,7 @@ Execute work units with sequential subagent flow:
 
 ### Setup
 
-Before creating subagents, create a worktree:
+Before creating Sub Agents, create a worktree:
 
 ```bash
 ./scripts/setup-worktree.sh feature/$ARGUMENTS-complete $ARGUMENTS
@@ -67,7 +67,7 @@ After verification:
 
 1. Document cumulative progress
 2. Identify next subtask in optimal order
-3. Launch next development subagent with context of completed work
+3. Launch next development Sub Agent with context of completed work
 4. Repeat until all subtasks complete
 
 ## Completion
@@ -79,9 +79,9 @@ When all work is done:
 3. Update subtasks of $ARGUMENTS in JIRA
 4. Provide summary of all completed work
 
-## Subagent Instructions
+## Sub Agent Instructions
 
-### Engineer Subagent Instructions
+### Engineer Sub Agent Instructions
 
 ```
 WORKING DIRECTORY: worktrees/feature/$ARGUMENTS-complete
@@ -94,7 +94,7 @@ Instructions:
 2. Read .claude/commands/work_on_ticket_engineer.md and follow all instructions
 ```
 
-### Project Manager Subagent Instructions
+### Project Manager Sub Agent Instructions
 
 ```
 WORKING DIRECTORY: worktrees/feature/$ARGUMENTS-complete
@@ -107,7 +107,7 @@ Instructions:
 2. Read .claude/commands/work_on_ticket_project_manager.md and follow all instructions
 ```
 
-### Support Engineer Subagent Instructions
+### Support Engineer Sub Agent Instructions
 
 ```
 WORKING DIRECTORY: worktrees/feature/$ARGUMENTS-complete
@@ -120,7 +120,7 @@ Instructions:
 2. Read .claude/commands/work_on_ticket_support_engineer.md and follow all instructions
 ```
 
-### Code Review Engineer Subagent Instructions
+### Code Review Engineer Sub Agent Instructions
 
 ```
 JIRA TICKET: [TICKET-ID]
@@ -131,7 +131,7 @@ Instructions:
 2. Read .claude/commands/respond_to_all_code_reviews.md and follow all instructions
 ```
 
-### Code Merging Engineer Subagent Instructions
+### Code Merging Engineer Sub Agent Instructions
 
 ```
 JIRA TICKET: [TICKET-ID]
