@@ -19,12 +19,14 @@ claude-template/
 │   │   ├── work_on_ticket_parallel.md       # Parallel execution workflow
 │   │   ├── work_on_ticket_project_manager.md # PM role workflow
 │   │   ├── work_on_ticket_respond_to_pr_comments.md # PR comment workflow
-│   │   └── work_on_ticket_support_engineer.md # Support role workflow
+│   │   ├── work_on_ticket_support_engineer.md # Support role workflow
+│   │   ├── reflection.md               # Project instruction analysis
+│   │   ├── technicalManager.md         # Technical manager workflow
+│   │   └── settings.local.json         # Local Claude settings override
 │   └── settings.json          # Global Claude settings
 ├── ai_docs/                   # AI-related documentation
 │   ├── anthropic-tool-use.md  # Anthropic tool usage guide
-│   ├── code-standards.md      # Universal code standards and best practices
-│   ├── project-management.md  # AI-assisted project management system
+│   ├── jira-and-confluence-tool-use.md # JIRA and Confluence MCP integration
 │   ├── react-native.md       # React Native development docs
 │   └── supabase.md           # Supabase integration docs
 ├── scripts/                   # Utility scripts
@@ -32,10 +34,8 @@ claude-template/
 │   ├── setup-worktree.sh      # Create individual worktree
 │   └── setup-worktree-batch.sh # Batch worktree creation
 ├── specs/                     # Project specifications and JIRA MCP integration
-│   ├── completed/             # Historical project milestones
-│   │   └── archive-index.md   # Quick reference to completed work
-│   ├── COMMIT_REFERENCE.md    # Commit message conventions with JIRA integration
-│   ├── jira_integration.md    # JIRA MCP setup and conventions
+│   ├── code-standards.md      # Universal code standards and best practices
+│   ├── project-management.md  # AI-assisted project management system
 │   └── project_plan.md        # Master project overview with JIRA references
 ├── .gitignore                 # Git ignore rules
 ├── .mcp.json                  # MCP server configuration (local only)
@@ -86,24 +86,23 @@ This will give you:
 ### AI Documentation
 
 - `ai_docs/anthropic-tool-use.md` - Guide for using Anthropic's tool-calling features
-- `ai_docs/code-standards.md` - Universal code standards and best practices
-- `ai_docs/project-management.md` - AI-assisted project management system with hierarchical specs
+- `ai_docs/jira-and-confluence-tool-use.md` - JIRA and Confluence MCP integration guide
 - `ai_docs/react-native.md` - React Native development documentation
 - `ai_docs/supabase.md` - Supabase integration and usage guide
 
-### Project Specifications & JIRA Integration
+### Project Specifications
 
 - `specs/project_plan.md` - Master project overview with JIRA project references
-- `specs/jira_integration.md` - JIRA MCP setup, conventions, and best practices
-- `specs/COMMIT_REFERENCE.md` - JIRA-based commit message conventions
+- `specs/code-standards.md` - Universal code standards and best practices
+- `specs/project-management.md` - AI-assisted project management system with hierarchical specs
 - **JIRA Issues** (via MCP) - Epics, Stories, Tasks, and Sub-tasks managed in JIRA
 
 ### Project Files
 
 - `CLAUDE.md` - Main Claude-specific project documentation
-- `mock_data.txt` - Sample data for development and testing
 - `.mcp.json` - MCP (Model Context Protocol) server configuration (local only)
 - `.gitignore` - Comprehensive ignore rules to protect sensitive configs
+- `.claude/commands/settings.local.json` - Local Claude settings overrides
 
 ## Setup
 
@@ -136,7 +135,7 @@ This will give you:
 2. **Load project context:** Use `/prime` command to quickly load project understanding
 3. **Follow project management system:** Use hierarchical specs (project → features → tasks)
 4. **Maintain documentation:** Keep README.md and specs current during development
-5. **Use proper commit conventions:** Follow patterns in `specs/COMMIT_REFERENCE.md`
+5. **Use proper commit conventions:** Follow JIRA-based commit message patterns
 
 #### Project Management System with JIRA MCP
 
@@ -150,10 +149,10 @@ This template includes a comprehensive AI-assisted project management system int
 
 **Key Files:**
 
-- `ai_docs/project-management.md` - Complete JIRA MCP system documentation
-- `specs/jira_integration.md` - JIRA MCP setup and conventions
+- `specs/project-management.md` - Complete JIRA MCP system documentation
+- `ai_docs/jira-and-confluence-tool-use.md` - JIRA MCP setup and conventions
 - `specs/project_plan.md` - Always loaded by `/prime` command with JIRA references
-- `specs/COMMIT_REFERENCE.md` - JIRA-based commit message conventions
+- `specs/code-standards.md` - Universal code standards and best practices
 
 ### Claude Code Integration
 
@@ -180,6 +179,7 @@ This project includes Claude Code configuration for enhanced development experie
    - `/work_on_ticket_project_manager` - PM perspective with stakeholder considerations
    - `/work_on_ticket_support_engineer` - Support-focused with customer impact analysis
    - `/work_on_ticket_parallel` - Parallel execution for complex multi-step tasks
+   - `/technicalManager` - Technical manager workflow for strategic decisions
 
 4. **Code Review Commands:**
    - `/respond_to_pr [PR_URL]` - Analyze and respond to individual PR reviews
@@ -190,6 +190,10 @@ This project includes Claude Code configuration for enhanced development experie
 5. **`/infinite`** - Continuous task execution mode
    - Autonomous task management and completion
    - Ideal for complex multi-step implementations
+
+6. **`/reflection`** - Analyze and improve CLAUDE.md instructions
+   - Reviews current project instructions
+   - Suggests improvements and clarifications
 
 To use with Claude Code:
 
