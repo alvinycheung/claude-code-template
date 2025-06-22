@@ -10,6 +10,7 @@ claude-template/
 │   ├── commands/              # Custom Claude commands
 │   │   ├── claude_template_setup.md  # Template setup guide
 │   │   ├── infinite.md               # Infinite mode command
+│   │   ├── merge_all_approved_pull_requests.md # Auto-merge approved PRs
 │   │   ├── prime.md                  # Prime context command
 │   │   ├── respond_to_all_code_reviews.md  # Batch PR review responses
 │   │   ├── respond_to_pr.md          # Individual PR response
@@ -17,6 +18,7 @@ claude-template/
 │   │   ├── work_on_ticket_engineer.md       # Engineer role workflow
 │   │   ├── work_on_ticket_parallel.md       # Parallel execution workflow
 │   │   ├── work_on_ticket_project_manager.md # PM role workflow
+│   │   ├── work_on_ticket_respond_to_pr_comments.md # PR comment workflow
 │   │   └── work_on_ticket_support_engineer.md # Support role workflow
 │   └── settings.json          # Global Claude settings
 ├── ai_docs/                   # AI-related documentation
@@ -25,6 +27,10 @@ claude-template/
 │   ├── project-management.md  # AI-assisted project management system
 │   ├── react-native.md       # React Native development docs
 │   └── supabase.md           # Supabase integration docs
+├── scripts/                   # Utility scripts
+│   ├── cleanup-worktrees.sh   # Clean up git worktrees
+│   ├── setup-worktree.sh      # Create individual worktree
+│   └── setup-worktree-batch.sh # Batch worktree creation
 ├── specs/                     # Project specifications and JIRA MCP integration
 │   ├── completed/             # Historical project milestones
 │   │   └── archive-index.md   # Quick reference to completed work
@@ -178,6 +184,8 @@ This project includes Claude Code configuration for enhanced development experie
 4. **Code Review Commands:**
    - `/respond_to_pr [PR_URL]` - Analyze and respond to individual PR reviews
    - `/respond_to_all_code_reviews` - Batch process multiple PR reviews
+   - `/work_on_ticket_respond_to_pr_comments` - Dedicated PR comment response workflow
+   - `/merge_all_approved_pull_requests` - Automatically merge approved PRs
 
 5. **`/infinite`** - Continuous task execution mode
    - Autonomous task management and completion
