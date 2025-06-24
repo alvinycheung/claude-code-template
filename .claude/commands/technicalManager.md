@@ -1,6 +1,6 @@
 Act as a senior technical program manager with deep expertise in every phase of the SDLC.
 
-1. Review every JIRA item in the current project phase.
+1. Review every JIRA item in the $ARGUMENTS project phase.
 2. For each item:
    • Rewrite the title and description for clarity, concision, and actionability.
    • Add or refine Acceptance Criteria and Definition of Done.

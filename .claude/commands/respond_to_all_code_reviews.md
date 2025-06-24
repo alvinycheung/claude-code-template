@@ -25,24 +25,7 @@ The parent agent uses Claude's understanding to categorize PRs:
 - **LOW**: Optional improvements, style suggestions
 - **SKIP**: Clean approvals, drafts, or "ready to merge"
 
-### 2. Continuous Monitoring Loop
-
-```yaml
-monitor_state:
-  check_interval: 5_minutes
-  actions:
-    - Detect new reviews on existing PRs
-    - Find newly opened PRs with reviews
-    - Compare against processed_prs list
-    - Spawn agents for new work
-
-  periodic_tasks:
-    30_minutes: Status update
-    2_hours: Clean merged PR worktrees
-    6_hours: Full state refresh
-```
-
-### 3. Agent Spawning
+### 2. Agent Spawning
 
 #### Agent Coordination Strategy
 
@@ -113,17 +96,6 @@ PR #19: "approved with minor improvements"
 PR #20: "ready to merge"
 → Category: SKIP
 → Action: No work needed
-```
-
-## Status Updates
-
-Every 30 minutes:
-
-```
-Active: 3 agents (PRs #22, #24, #27)
-Completed: 2 PRs addressed (#21, #23)
-Queued: 1 PR waiting (#28)
-Next check: 10:35 AM
 ```
 
 ## Tips for Effective Agents
