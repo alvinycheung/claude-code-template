@@ -2,6 +2,8 @@
 
 # Claude AI Instructions for [PROJECT_NAME]
 
+Always call necessary tool calls in parallel
+
 ## Project Context
 
 **Project Type**: [Web App / Mobile App / API / Library / etc.]

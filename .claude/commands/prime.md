@@ -1,5 +1,7 @@
 # Context Window Prime
 
+Always call necessary tool calls in parallel
+
 RUN:
 
 # Basic project analysis
