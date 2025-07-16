@@ -2,7 +2,9 @@
 
 # Claude AI Instructions for [PROJECT_NAME]
 
-Always call necessary tool calls in parallel
+For maximum efficiency, whenever you need to perform multilpe independent operations, invoke all relevant tools simultaneously, in parallel.
+
+When it makes the most sense, especially after completing large tasks and realizing the user asked you to do things differently, read and run through .claude/reflection.md keep your updates short and to the point.
 
 ## Project Context
 
